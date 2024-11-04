@@ -2,11 +2,17 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth');
+const cors = require('cors');
 const textRoutes = require('./routes/text');
 
 dotenv.config();
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:5173'  // Allow only the frontend origin
+}));
+
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;

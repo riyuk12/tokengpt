@@ -7,7 +7,7 @@ const Data = require('../models/Data'); // Import the Data model
 const router = express.Router();
 
 // ChatGPT API setup
-const OPENAI_API_KEY = process.env.KESHAV_CHAT_API_KEY;
+const OPENAI_API_KEY = process.env.CHATGPT_API_KEY
 const CHATGPT_API_URL = 'https://api.openai.com/v1/chat/completions';
 
 router.post('/input-text', auth, async (req, res) => {
